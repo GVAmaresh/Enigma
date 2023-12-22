@@ -36,13 +36,15 @@ function LeftSidebar() {
       </div>
       <div className="mt-10 px-6">
         <div className="flex cursor-pointer gap-4 p-4">
-          <Image
-            src="./assets/logout.svg"
-            alt="logout"
-            width={24}
-            height={24}
-          />
-          <p className="text-light-2 mx-lg:hidden">Logout</p>
+          <Link href={"/login"} key={"login"}>
+            <Image
+              src="./assets/logout.svg"
+              alt="logout"
+              width={24}
+              height={24}
+            />
+            <p className="text-light-2 mx-lg:hidden">Login</p>
+          </Link>
         </div>
       </div>
     </section>
