@@ -66,7 +66,7 @@
                                 "who designed you"
                         ],
                         "responses": [
-                                "College students"
+                                "Dayanada Sagar College students made me !"
                         ],
                         "context_set": ""
                 },
@@ -141,7 +141,7 @@
                                 "call"
                         ],
                         "responses": [
-                                "You can contact at: NUMBER"
+                                "You can contact at: 9880325123 for any queries"
                         ],
                         "context_set": ""
                 },
@@ -209,7 +209,8 @@
                                 "fees for non-Ac room for boys"
                         ],
                         "responses": [
-                                "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+                                "For Fee detail visit <a target=\"_blank\" href=\"https://www.dsce.edu.in/pay-fee-online\">here</a>",
+                                "For Fee Structure detail visit <a target=\"_blank\" href=\"https://www.dsce.edu.in/admissions/fee-structure\">here</a>"
                         ],
                         "context_set": ""
                 },
@@ -232,7 +233,7 @@
                                 "location"
                         ],
                         "responses": [
-                                "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+                                "<a target=\"_blank\" href=\"https://maps.app.goo.gl/fytgRuZDPBCkPEzf9\"> here</a>"
                         ],
                         "context_set": ""
                 },
@@ -263,7 +264,7 @@
                                 "distance between hostel and college"
                         ],
                         "responses": [
-                                "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+                                "For hostel detail visit <a target=\"_blank\" href=\"\"> here</a>"
                         ],
                         "context_set": ""
                 },
@@ -321,7 +322,7 @@
                                 "floors"
                         ],
                         "responses": [
-                                "My College has total 2 floors "
+                                "My College has total 23 acres and 26 buildings"
                         ],
                         "context_set": ""
                 },
@@ -337,7 +338,7 @@
                                 "What is next lecture"
                         ],
                         "responses": [
-                                "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
+                                "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"https://www.dsce.edu.in/academics/ug/computer-science-engineering#\"> here</a>"
                         ],
                         "context_set": ""
                 },
@@ -601,7 +602,7 @@
                                 "do we have to wear uniform"
                         ],
                         "responses": [
-                                "ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULER"
+                                "Please wear lab uniforms on the days you have lab"
                         ],
                         "context_set": ""
                 },
@@ -616,7 +617,7 @@
                                 "how many committee are there in college"
                         ],
                         "responses": [
-                                "For the various committe in college contact this number: ADD NUMBER"
+                                "For the various committe in college contact this number: 4545454545 for all commities"
                         ],
                         "context_set": ""
                 },

@@ -1,8 +1,25 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { auth, googleProvider } from "../config/firebase";
+import { db, storage } from "../config/firebase";
 
-// Signup component
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { redirect } from "next/navigation";
+// Signup componentf
 export default function Signup() {
   const [signup, setSignup] = useState(false);
   const [signupUser, setSignupUser] = useState({
@@ -11,7 +28,7 @@ export default function Signup() {
     confirmPassword: "",
     role: "", // Added role field
   });
-
+  const usersCollectionRef = collection(db, "users");
   useEffect(() => {
     if (signup) {
       const { email, password, confirmPassword, role } = signupUser;
@@ -21,6 +38,20 @@ export default function Signup() {
       if (password !== confirmPassword) {
         return alert("Passwords do not match.");
       }
+      const signIn = async () => {
+        try {
+          await createUserWithEmailAndPassword(auth, email, password);
+          await addDoc(usersCollectionRef, {
+            email,
+            role,
+            userId: auth?.currentUser?.uid,
+          });
+          window.location.href = "/";
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      signIn();
     }
   }, [signup, signupUser]);
 

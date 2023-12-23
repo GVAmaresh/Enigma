@@ -25,7 +25,7 @@ import React from "react";
 const Card = ({ answer }: { answer?: string }) => {
   return (
     <div
-      className={`flex w-[46rem] justify-center items-center text-gray-200 bg-dark-4  p-4 rounded-lg `}
+      className={`flex w-[46rem] justify-center items-center text-gray-200 bg-dark-4  p-4 ml-52 mt-10 rounded-lg `}
     >
       {answer === "" ? "Hello! How can I assist you?" : answer}
     </div>

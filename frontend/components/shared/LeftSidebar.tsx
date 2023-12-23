@@ -1,12 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import { sidebarLinks } from "./../../constants/index";
+import { auth } from "@/app/(root)/config/firebase";
+import { signOut } from "firebase/auth";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { sidebarLinks } from "./../../constants/index";
+import { useEffect } from "react";
+
 function LeftSidebar() {
   const router = useRouter();
   const pathname = usePathname();
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      router.refresh;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  useEffect(() => {}, [auth.currentUser]);
   return (
     <section className="custom-scrollbar leftsidebar">
       <div className="flex w-full flex-1 flex-col gap-6 px-6">
@@ -36,15 +49,21 @@ function LeftSidebar() {
       </div>
       <div className="mt-10 px-6">
         <div className="flex cursor-pointer gap-4 p-4">
-          <Link href={"/login"} key={"login"}>
-            <Image
-              src="./assets/logout.svg"
-              alt="logout"
-              width={24}
-              height={24}
-            />
-            <p className="text-light-2 mx-lg:hidden">Login</p>
-          </Link>
+          {auth.currentUser ? (
+            <button onClick={logOut} key={"login"}>
+              <Image
+                src="./assets/logout.svg"
+                alt="logout"
+                width={24}
+                height={24}
+              />
+              <p className="text-light-2 mx-lg:hidden">Logout</p>
+            </button>
+          ) : (
+            <Link href={"/login"} key={"login"}>
+              <p className="text-light-2 mx-lg:hidden">Login</p>
+            </Link>
+          )}
         </div>
       </div>
     </section>

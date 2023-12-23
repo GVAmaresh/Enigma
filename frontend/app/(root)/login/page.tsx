@@ -1,19 +1,43 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { auth, googleProvider } from "../config/firebase";
+import { db, storage } from "../config/firebase";
 
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 export default function Login() {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
   useEffect(() => {
     if (login) {
       if (!user.email || !user.password)
         return alert("Please fill in both username and password fields.");
     }
+    const signIn = () => {
+      signInWithEmailAndPassword(auth, user.email, user.password).then(
+        (userCredential) => {
+          const user = userCredential.user;
+          window.location.href = "/";
+        }
+      );
+    };
+    signIn();
   }, [login]);
 
   return (

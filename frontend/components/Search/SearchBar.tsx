@@ -22,7 +22,7 @@ const SearchBar = ({ handleSubmit }: { handleSubmit: Function }) => {
 
   return (
     <div className=" flex justify-center mt-92">
-      <form className="flex w-full" onSubmit={handleFormSubmit}>
+      <form className="flex w-96" onSubmit={handleFormSubmit}>
         <input
           type="text"
           placeholder="Ask Questions related to College"
